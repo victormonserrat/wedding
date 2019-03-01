@@ -1,0 +1,69 @@
+easy_admin:
+    site_name: 'Elena y Jaime'
+    user:
+        display_name: false
+        display_avatar: false
+    design:
+        menu:
+            - { entity: 'Guest', icon: 'user-o' }
+            - { entity: 'Invitation', icon: 'envelope-open-o' }
+    entities:
+        Guest:
+            class: App\Entity\Guest
+            label: 'menu.Guest'
+            list:
+                title: 'list.Guest'
+                fields:
+                    - { property: 'name', label: 'fields.Name' }
+                    - { property: 'confirmation', label: 'fields.Confirmation' }
+                    - { property: 'answer', label: 'fields.Answer', type: 'boolean' }
+                    - { property: 'menu', label: 'fields.Menu' }
+                    - { property: 'allergens', label: 'fields.Allergens' }
+                    - { property: 'song', label: 'fields.Song' }
+                    - { property: 'room', label: 'fields.Room' }
+                actions:
+                    - { name: 'new', label: 'new.Guest' }
+            form:
+                fields:
+                    - { property: 'firstName', label: 'fields.FirstName' }
+                    - { property: 'lastName', label: 'fields.LastName' }
+                    - { property: 'secondLastName', label: 'fields.SecondLastName' }
+                    - { property: 'gender', label: 'fields.Gender', type: 'choice', type_options: { choices: { Mujer: 'Mujer', Hombre: 'Hombre' } } }
+            new:
+                title: 'new.Guest'
+            edit:
+                title: 'edit.Guest'
+                fields:
+                    - { property: 'answer', label: 'fields.Answer' }
+        Invitation:
+            class: App\Entity\Invitation
+            label: 'menu.Invitation'
+            list:
+                title: 'list.Invitation'
+                fields:
+                    - { property: 'guestsNames', label: 'fields.Guests' }
+                    - { property: 'link', label: 'fields.Link', type: 'url' }
+                    - { property: 'comment', label: 'fields.Comment' }
+                    - { property: 'sent', label: 'fields.Sent' }
+                    - { property: 'received', label: 'fields.Received', type: 'boolean' }
+                actions:
+                    - { name: 'new', label: 'new.Invitation' }
+            form:
+                fields:
+                    - { property: 'guest1', label: 'fields.Guest1' }
+                    - { property: 'guest2', label: 'fields.Guest2' }
+                    - { property: 'guest3', label: 'fields.Guest3' }
+                    - { property: 'guest4', label: 'fields.Guest4' }
+                    - { property: 'guest5', label: 'fields.Guest5' }
+                    - { property: 'comment', label: 'fields.Comment' }
+            new:
+                title: 'new.Invitation'
+            edit:
+                title: 'edit.Invitation'
+            search:
+                fields:
+                    - { property: 'guest1' }
+                    - { property: 'guest2' }
+                    - { property: 'guest3' }
+                    - { property: 'guest4' }
+                    - { property: 'guest5' }
